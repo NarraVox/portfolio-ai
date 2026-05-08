@@ -128,14 +128,26 @@
         .contact-tag:hover {
             border-color: var(--primary);
             color: var(--text);
-            transform: translateY(-2px);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+            background: rgba(0, 210, 255, 0.1);
         }
 
         /* Sections */
         section {
             margin-bottom: 60px;
-            animation: fadeInUp 0.8s ease-out both;
+            opacity: 0;
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
         }
+
+        section:nth-child(1) { animation-delay: 0.2s; }
+        section:nth-child(2) { animation-delay: 0.4s; }
+        section:nth-child(3) { animation-delay: 0.6s; }
+        section:nth-child(4) { animation-delay: 0.8s; }
+        section:nth-child(5) { animation-delay: 1.0s; }
+        section:nth-child(6) { animation-delay: 1.2s; }
+        section:nth-child(7) { animation-delay: 1.4s; }
+        section:nth-child(8) { animation-delay: 1.6s; }
 
         .section-title {
             font-size: 0.8rem;
@@ -163,12 +175,13 @@
             border-radius: 24px;
             padding: 40px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .glass-card:hover {
-            border-color: rgba(0, 210, 255, 0.2);
-            box-shadow: 0 20px 50px rgba(0, 210, 255, 0.05);
+            border-color: rgba(0, 210, 255, 0.4);
+            box-shadow: 0 30px 60px rgba(0, 210, 255, 0.15);
+            transform: translateY(-8px);
         }
 
         /* Skills */
@@ -186,14 +199,15 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-muted);
-            transition: 0.3s;
+            transition: all 0.3s ease;
         }
 
         .skill-pill:hover {
             background: var(--primary);
             color: var(--bg);
             border-color: var(--primary);
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
         }
 
         /* Experience Items */
@@ -262,14 +276,40 @@
 
         /* Animations */
         @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(-50px) scale(0.9); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        @keyframes pulse {
+            0% { transform: rotate(-5deg) scale(1); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3); }
+            50% { transform: rotate(-5deg) scale(1.05); box-shadow: 0 15px 45px rgba(0, 210, 255, 0.5); }
+            100% { transform: rotate(-5deg) scale(1); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3); }
+        }
+
+        .profile-icon {
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        .exp-list li {
+            opacity: 0;
+            animation: fadeInRight 0.5s ease-out forwards;
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .exp-list li:nth-child(1) { animation-delay: 0.1s; }
+        .exp-list li:nth-child(2) { animation-delay: 0.2s; }
+        .exp-list li:nth-child(3) { animation-delay: 0.3s; }
+        .exp-list li:nth-child(4) { animation-delay: 0.4s; }
+        .exp-list li:nth-child(5) { animation-delay: 0.5s; }
 
         a { color: inherit; text-decoration: none; }
 
@@ -310,6 +350,7 @@
                 <div class="contact-tag">📧 rick6001@gmail.com</div>
                 <div class="contact-tag">📱 (61) 99209-5019</div>
                 <a href="https://github.com/NarraVox/PhoenixDub-AI" target="_blank" class="contact-tag">🔗 GitHub</a>
+                <a href="https://narravox.github.io/portfolio-ai/" target="_blank" class="contact-tag">🌐 Portfólio Digital</a>
                 <a href="https://www.youtube.com/@narravoxstudios.oficial" target="_blank" class="contact-tag">🎬 NarraVox (Studio)</a>
                 <a href="https://www.youtube.com/@PauloDubsStudio100" target="_blank" class="contact-tag">🎮 PauloDubs (Games)</a>
             </div>
@@ -321,6 +362,15 @@
                 Iniciei o desenvolvimento de sistemas complexos de forma autônoma <b>antes mesmo de ingressar na graduação</b>, utilizando a Inteligência Artificial como principal mentora. Focado em <b>Desenvolvimento Assistido por IA</b>, utilizo ferramentas como Antigravity e LLMs para criar automações de alto impacto, unindo iniciativa técnica e execução ágil.
             </div>
         </section>
+
+        <section>
+            <div class="section-title">Educação</div>
+            <div class="glass-card">
+                <strong>Graduação em Análise e Desenvolvimento de Sistemas</strong><br>
+                <span style="color: var(--primary)">UniFatecie</span> | 1º Semestre (Previsão: Dez/2027)
+            </div>
+        </section>
+
 
         <section>
             <div class="section-title">Habilidades Tech</div>
@@ -414,13 +464,7 @@
             </div>
         </section>
 
-        <section>
-            <div class="section-title">Educação</div>
-            <div class="glass-card">
-                <strong>Graduação em Análise e Desenvolvimento de Sistemas</strong><br>
-                <span style="color: var(--primary)">UniFatecie</span> | 1º Semestre (Previsão: Dez/2027)
-            </div>
-        </section>
+
 
         <footer>
             &copy; 2026 Paulo Henrik Carvalho Araújo. Todos os direitos reservados.
